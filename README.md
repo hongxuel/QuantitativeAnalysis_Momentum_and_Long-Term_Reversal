@@ -6,7 +6,7 @@ In this quantitative analysis, I want to test if badly performing stocks in mome
 **1. Motivation**  
 &emsp;According to J. Conrad and M. D. Yavuz (2016), short-term momentum and long-run reversal naturally have no connection. Although momentum and reversal are separate and distinct, I am curious about whether stocks performing poorly in short-term momentum strategy will perform well in long-term reversal strategy.  
 **2. Data acquisition and process**   
-&emsp;I apply historical stock lists of S&P 500 to obtain monthly price and return data (1965-2018) of S&P 500 component stocks from Wharton Research Data Services. Also, I download financial data (1971-2018) of the lastest stocks listed on Nasdaq (on 2020/11/18) from Wharton Research Data Services.  
+&emsp;I apply historical stock lists of S&P 500 to obtain monthly price and return data (1965-2018) of S&P 500 component stocks from Wharton Research Data Services. Also, I download financial data (1971-2018) of the lastest stocks listed on Nasdaq (on 2020/11/13) from Wharton Research Data Services.  
 &emsp;S&P 500 index (1965-2018) and Nasdaq index (1971-2018) are used as benchmarks in the strategy. I use 3-month treasury rates as risk-free rate.  
 ## Main Strategy  
 **1. Strategy Description**   
@@ -32,3 +32,12 @@ In this quantitative analysis, I want to test if badly performing stocks in mome
 &emsp;With stocks in the S&P 500 from 1965 to 2018, the strategy has overall good profits with a high mean return and sharpe ratio compared with the benchmark. I select four kinds of stocks as portfolio from momentum to quantify bad momentum performance and find out, though strategies differ from each other, they still gain profits steadily and avoid loss in some bearish market. Among these four portfolios, the "Portfoliobysp" which is constructed by stocks with 20% least sharpe ratio excluding highest 20% price volatility has the highest annualized return at 17.40% and the highest annualized sharpe ratio at 0.37.  
 &emsp;Compared with stocks which perform well in momentum, badly performing stocks have higher annualized return and sharpe ratio, which proves that bad short-term momentum performing stock is likely to work well in long-term reversal.  
 &emsp;I also find that this strategy cannot be applied to stocks listed on Nasdaq partly because the number of Nasdaq stocks is not sufficient to hold diverification for this strategy. Besides, statistically high volatility and inconsistency prove that this strategy is not suitable for Nasdaq.
+
+## File Description
+
+^GSPC.csv and ^IXIC.csv are monthly data of S&P500 index and Nasdaq index from 1965 to 2018.    
+msf500.sas7bdat is the monthly component stock list of S&P500 from 1965 to 2019.    
+NASDAQ2020.xlsx is the latest component stock list of Nasdaq up to 2020/11/13.      
+Original_Strategy.ipynb, Test_UseTop20BestStocks.ipynb and Test_NasdaqStocks.ipynb are the strategy code files.   
+risk-free_return.csv is the 3-month treasury rates monthly data from 1965 to 2018.    
+sp500data1.csv.zip is the monthly data of all the stocks once in S&P500 from 1965 to 2019.
